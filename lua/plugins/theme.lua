@@ -17,16 +17,32 @@ return {
                     sidebars = "storm", -- style for sidebars, see below
                     floats = "storm", -- style for floating windows
                 },
+                on_colors = function(colors)
+                    colors.fg_gutter = "#b2b8cf"
+                    colors.comment = "#b2b8cf"
+                end,
             })
             vim.cmd.colorscheme("tokyonight")
+            --vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#51B3EC', bold=true })
+            --vim.api.nvim_set_hl(0, 'LineNr', { fg='white', bold=true })
+            --vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#FB508F', bold=true })
         end,
     },
     {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
+            local custom_tokyonight = require("lualine.themes.tokyonight") --maybe not very accurate
+            custom_tokyonight.normal.c.fg_gutter = "#ffffff"
+            custom_tokyonight.normal.c.comment = "#ffffff"
+            local ct = require("lualine.themes.auto")
+            ct.normal.b.bg = "#3b4261"
+            ct.insert.b.bg = "#3b4261"
+            ct.visual.b.bg = "#3b4261"
+            ct.replace.b.bg = "#3b4261"
+            ct.command.b.bg = "#3b4261"
             require("lualine").setup({
-                options = { theme = "auto", section_separators = "", component_separators = "" },
+                options = { theme = ct, section_separators = "", component_separators = "" },
             })
         end,
     },
