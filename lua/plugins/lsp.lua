@@ -84,6 +84,10 @@ return {
                     clangd = function()
                         require("lspconfig").clangd.setup({})
                     end,
+
+                    denols = function()
+                        require("lspconfig").denols.setup({})
+                    end,
                 },
             })
         end,
