@@ -4,15 +4,18 @@ return {
         branch = "v4.x",
         lazy = true,
         config = false,
+        disable = true,
     },
     {
         "williamboman/mason.nvim",
         lazy = false,
         config = true,
+        disable = true,
     },
     {
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
+        disable = true,
         dependencies = {
             { "L3MON4D3/LuaSnip" },
             { "saadparwaiz1/cmp_luasnip" },
@@ -51,6 +54,7 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
+        disable = true,
         cmd = { "LspInfo", "LspInstall", "LspStart" },
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {

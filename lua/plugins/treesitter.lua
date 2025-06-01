@@ -12,6 +12,7 @@ return {
                 "bash",
                 "python",
                 "sql",
+                "proto",
             },
             sync_install = false,
             auto_install = true,
@@ -22,4 +23,5 @@ return {
             },
         })
     end,
+    -- TODO: add nvim-treesitter-context
 }

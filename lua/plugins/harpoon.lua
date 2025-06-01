@@ -54,7 +54,7 @@ return {
             harpoon:list():replace_at(3)
         end)
         vim.keymap.set("n", "<leader><C-s>", function()
-            harpoon:list():replace_at(3)
+            harpoon:list():replace_at(4)
         end)
     end,
 }
